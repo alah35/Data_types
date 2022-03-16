@@ -9,3 +9,4 @@
 #include <cstdio>
 #include "Tasks/Task1.cpp"
 #include "Tasks/Task2.cpp"
+#include "Tasks/Task3.cpp"
