@@ -14,6 +14,7 @@ double calculate(double x, char operation, double y) {
         case '/':
             return x / y;
     }
+    return 0;
 }
 
 int task3(){
