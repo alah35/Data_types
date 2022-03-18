@@ -86,7 +86,8 @@ void task5() {
         bool night = i % 24 > 16 || i < 5;
         std::cout << "It is " << i % 24 << " o'clock. Enter the data from sensors:" << std::endl;
         std::cout << "(temperature inside the house/temperature outside the house/is there any movement outside/"
-                     "is the light on in the house:" << std::endl;
+                     "is the light on in the house)" << std::endl;
+        std::cin.sync();
         std::getline(std::cin, s);
         sensors.str(s);
 

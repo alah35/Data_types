@@ -54,6 +54,7 @@ void task4() {
 
     for (int i = 0; i < 12; i++) {
         std::cout << "Enter " << i + 1 << " combination:";
+        std::cin.sync();
         std::getline(std::cin, combination);
 
         while (!isValid(combination)) {

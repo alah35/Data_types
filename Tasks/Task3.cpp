@@ -22,6 +22,7 @@ int task3(){
     std::stringstream output;
 
     std::cout << "Enter your expression:" << std::endl;
+    std::cin.sync();
     std::getline(std::cin, expression);
     output << expression << " ";
 
@@ -29,7 +30,7 @@ int task3(){
     char operation;
     output >> a >> operation >> b;
     if (!isValid(operation)) {
-        std::cout << "Wrong operation. Restart program";
+        std::cout << "Wrong operation. Restart program" << std::endl;
         return -1;
     }
 

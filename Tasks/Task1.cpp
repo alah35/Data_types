@@ -11,6 +11,7 @@ void task1() {
         char display[17];
         float delta = 0.f;
         std::cout << "Enter delta speed:";
+        std::cin.sync();
         std::cin >> delta;
         speed += delta;
         std::sprintf(display, "Speed: %.1f km/h", speed);
