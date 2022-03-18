@@ -59,18 +59,21 @@ void control_conditioner(float tempInside, int &state) {
 }
 
 
-void control_light_inside(bool lightIns, int state, int time, int bright) {
+void control_light_inside(bool lightIns, int &state, int time, int &bright) {
     if (time == 0)
         bright = 5000;
-    if (!(state & LIGHT_OUTSIDE) && lightIns) {
+    if (!(state & LIGHT_INSIDE) && lightIns) {
         state |= LIGHT_INSIDE;
         std::cout << "House Light is ON" << std::endl;
     } else
         if ((state & LIGHT_INSIDE) && !lightIns) {
+            state ^= LIGHT_INSIDE;
             std::cout << "House Light is OFF" << std::endl;
         }
-    if (time >= 16 && time <= 20 && (state & LIGHT_INSIDE))
+    if (time >= 16 && time <= 20 && (state & LIGHT_INSIDE)) {
         std::cout << "Color temperature: " << bright << "K" << std::endl;
+        bright -= 600;
+    }
 }
 
 void task5() {
@@ -82,6 +85,8 @@ void task5() {
         int time = i % 24;
         bool night = i % 24 > 16 || i < 5;
         std::cout << "It is " << i % 24 << " o'clock. Enter the data from sensors:" << std::endl;
+        std::cout << "(temperature inside the house/temperature outside the house/is there any movement outside/"
+                     "is the light on in the house:" << std::endl;
         std::getline(std::cin, s);
         sensors.str(s);
 
