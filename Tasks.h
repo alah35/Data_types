@@ -11,3 +11,4 @@
 #include "Tasks/Task2.cpp"
 #include "Tasks/Task3.cpp"
 #include "Tasks/Task4.cpp"
+#include "Tasks/SmartHome.cpp"
